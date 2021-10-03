@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Responsive Admin Dashboard Template">
+        <meta name="keywords" content="admin,dashboard">
+        <meta name="author" content="skcats">
+        <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!-- Title -->
+        <title>Attendance System dashboard</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <link href="{{ url_for('static', filename='plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='plugins/icomoon/style.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='plugins/uniform/css/default.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='plugins/switchery/switchery.min.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='plugins/nvd3/nv.d3.min.css') }}" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="{{ url_for('static', filename='css/ecaps.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+    </head>
+    {% endblock %}
+</head>
+
+<body>
+    <!-- Page Container -->
+    <div class="page-container">
+
+        <!-- Page Sidebar -->
+        <div class="page-sidebar">
+            <a class="logo-box" href="index.html">
+                <span>AURO UNIVERSITY</span>
+            </a>
+            <div class="page-sidebar-inner">
+                <div class="page-sidebar-menu">
+                    <ul class="accordion-menu">
+                        <li class="active-page">
+                            <a href="{{url_for('index')}}">
+                                <i class="menu-icon icon-home4"></i><span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('register')}}">
+                                <i class="menu-icon icon-inbox"></i><span>New Registration</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('register')}}">
+                                <i class="menu-icon icon-inbox"></i><span>View users</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Header -->
+            <div class="page-header">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <div class="logo-sm">
+                                <a href="javascript:void(0)" id="sidebar-toggle-button"><i class="fa fa-bars"></i></a>
+                                <a class="logo-box" href="{{url_for('index')}}"><span>AURO UNIVERSITY</span></a>
+                            </div>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="javascript:void(0)" id="collapsed-sidebar-toggle-button"><i class="fa fa-bars"></i></a></li>
+
+                            </ul>
+
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </div>
+            <!-- /Page Header -->
+            {% block content %}
+
+            <!-- Page Inner -->
+            <div class="page-inner">
+                <div class="page-title">
+                    <h3 class="breadcrumb-header">Dashboard</h3>
+                </div>
+                <div id="main-wrapper">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-white stats-widget">
+                                <div class="panel-body">
+                                    <div class="pull-left">
+                                        <span class="stats-number">$781,876</span>
+                                        <p class="stats-info">Total Income</p>
+                                    </div>
+                                    <div class="pull-right">
+                                        <i class="icon-arrow_upward stats-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-white stats-widget">
+                                <div class="panel-body">
+                                    <div class="pull-left">
+                                        <span class="stats-number">578,100</span>
+                                        <p class="stats-info">Downloads</p>
+                                    </div>
+                                    <div class="pull-right">
+                                        <i class="icon-arrow_downward stats-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-white stats-widget">
+                                <div class="panel-body">
+                                    <div class="pull-left">
+                                        <span class="stats-number">+23,356</span>
+                                        <p class="stats-info">New Registrations</p>
+                                    </div>
+                                    <div class="pull-right">
+                                        <i class="icon-arrow_upward stats-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-white stats-widget">
+                                <div class="panel-body">
+                                    <div class="pull-left">
+                                        <span class="stats-number">58%</span>
+                                        <p class="stats-info">Finished Tasks</p>
+                                    </div>
+                                    <div class="pull-right">
+                                        <i class="icon-arrow_upward stats-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Inner -->
+            {% endblock %}
+        </div>
+    </div>
+    <div id="footer">
+        {% block script %}
+        <script src="{{ url_for('static', filename='plugins/jquery/jquery-3.1.0.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/uniform/js/jquery.uniform.standalone.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/switchery/switchery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/d3/d3.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/nvd3/nv.d3.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/flot/jquery.flot.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/flot/jquery.flot.time.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/flot/jquery.flot.symbol.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/flot/jquery.flot.resize.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/flot/jquery.flot.tooltip.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/flot/jquery.flot.pie.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/chartjs/chart.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/ecaps.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/pages/dashboard.js') }}"></script>
+        {% endblock %}
+        <!-- <hr> {% block footer %} &copy; Copyright 2010 by Yash patel {% endblock %} -->
+    </div>
+</body>
+
+</html>
